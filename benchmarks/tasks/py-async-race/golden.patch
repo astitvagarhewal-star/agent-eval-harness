@@ -1,0 +1,21 @@
+diff --git a/counter/counter.py b/counter/counter.py
+index 1090fb1..721a37e 100644
+--- a/counter/counter.py
++++ b/counter/counter.py
+@@ -6,12 +6,12 @@ import asyncio
+ class Counter:
+     def __init__(self):
+         self.value = 0
++        self._lock = asyncio.Lock()
+ 
+     async def increment(self):
+-        # BUG: non-atomic read-modify-write with a yield in between.
+-        current = self.value
+-        await asyncio.sleep(0)  # yield control, widening the race window
+-        self.value = current + 1
++        async with self._lock:
++            current = self.value
++            self.value = current + 1
+ 
+ 
+ async def main():

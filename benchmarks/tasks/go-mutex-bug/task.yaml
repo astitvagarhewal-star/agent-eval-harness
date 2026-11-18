@@ -1,0 +1,10 @@
+id: go-mutex-bug
+prompt: |
+  Fix Counter.Add in counter.go so it releases the mutex (use defer Unlock)
+  instead of deadlocking on the next operation.
+test_cmd: go test ./...
+hidden_tests:
+  - hidden_test.go
+timeout_sec: 60
+difficulty: medium
+language: go

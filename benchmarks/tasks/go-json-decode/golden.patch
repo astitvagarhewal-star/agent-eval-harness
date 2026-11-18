@@ -1,0 +1,13 @@
+diff --git a/config.go b/config.go
+index 9f2b4a0..b5a7d33 100644
+--- a/config.go
++++ b/config.go
+@@ -3,7 +3,7 @@ package main
+ import "encoding/json"
+ 
+ type Config struct {
+-	Port int `json:"port_number"` // BUG: wrong tag, so "port" is ignored
++	Port int `json:"port"`
+ }
+ 
+ func Decode(data []byte) (*Config, error) {

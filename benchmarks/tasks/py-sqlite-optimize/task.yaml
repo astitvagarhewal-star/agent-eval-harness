@@ -1,0 +1,10 @@
+id: py-sqlite-optimize
+prompt: |
+  Fix count_high_value in reports.py so orders worth exactly 100 are included
+  (change the amount comparison from > to >=).
+test_cmd: PYTHONPATH=. python tests/test_hidden.py
+hidden_tests:
+  - tests/test_hidden.py
+timeout_sec: 60
+difficulty: easy
+language: python

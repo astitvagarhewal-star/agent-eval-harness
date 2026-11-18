@@ -1,0 +1,12 @@
+diff --git a/coerce.js b/coerce.js
+index 0befc0f..2536403 100644
+--- a/coerce.js
++++ b/coerce.js
+@@ -1,6 +1,4 @@
+-// coerce.js: equality check with a loose-comparison bug.
+ function areEqual(a, b) {
+-  // BUG: loose equality coerces types ("5" == 5).
+-  return a == b;
++  return a === b;
+ }
+ module.exports = { areEqual };

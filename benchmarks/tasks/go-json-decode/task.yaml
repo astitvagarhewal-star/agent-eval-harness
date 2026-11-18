@@ -1,0 +1,10 @@
+id: go-json-decode
+prompt: |
+  Fix the JSON struct tag in config.go so Decode maps "port" to Config.Port
+  instead of leaving it zero.
+test_cmd: go test ./...
+hidden_tests:
+  - hidden_test.go
+timeout_sec: 60
+difficulty: easy
+language: go

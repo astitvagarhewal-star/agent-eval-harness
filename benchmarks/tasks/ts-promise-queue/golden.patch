@@ -1,0 +1,25 @@
+diff --git a/queue.js b/queue.js
+index 6995e41..594aabf 100644
+--- a/queue.js
++++ b/queue.js
+@@ -1,4 +1,3 @@
+-// queue.js: promise queue that deadlocks when a task rejects.
+ class PromiseQueue {
+   constructor() {
+     this.queue = [];
+@@ -16,11 +15,10 @@ class PromiseQueue {
+       return;
+     }
+     this.running = true;
+-    // BUG: a rejected task never releases the lock, deadlocking the queue.
+-    Promise.resolve().then(fn).then(() => {
+-      this.running = false;
+-      this._run();
+-    });
++    Promise.resolve().then(fn).then(
++      () => { this.running = false; this._run(); },
++      () => { this.running = false; this._run(); }
++    );
+   }
+ }
+ module.exports = { PromiseQueue };

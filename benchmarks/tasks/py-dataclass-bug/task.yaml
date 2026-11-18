@@ -1,0 +1,10 @@
+id: py-dataclass-bug
+prompt: |
+  Fix the Task dataclass in model.py so each instance gets its own empty tags
+  list (use field(default_factory=list) instead of a shared mutable default).
+test_cmd: PYTHONPATH=. python tests/test_hidden.py
+hidden_tests:
+  - tests/test_hidden.py
+timeout_sec: 60
+difficulty: easy
+language: python

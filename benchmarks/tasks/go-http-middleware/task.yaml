@@ -1,0 +1,10 @@
+id: go-http-middleware
+prompt: |
+  Fix Middleware in middleware.go so it invokes the wrapped handler instead of
+  short-circuiting the request.
+test_cmd: go test ./...
+hidden_tests:
+  - hidden_test.go
+timeout_sec: 60
+difficulty: easy
+language: go

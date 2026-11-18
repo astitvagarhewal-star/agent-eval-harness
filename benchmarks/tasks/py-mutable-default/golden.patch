@@ -1,0 +1,14 @@
+diff --git a/utils.py b/utils.py
+index bd477cb..dc520d0 100644
+--- a/utils.py
++++ b/utils.py
+@@ -1,6 +1,5 @@
+-"""A function with a mutable default-argument bug."""
+-
+-
+-def append_item(item, items=[]):
++def append_item(item, items=None):
++    if items is None:
++        items = []
+     items.append(item)
+     return items

@@ -1,0 +1,16 @@
+diff --git a/events.js b/events.js
+index 895aa05..fd731be 100644
+--- a/events.js
++++ b/events.js
+@@ -1,10 +1,8 @@
+-// events.js: emitter that registers duplicate listeners.
+ function setup() {
+   const handlers = [];
+   return {
+-    // BUG: the same listener can be registered many times.
+     on(fn) {
+-      handlers.push(fn);
++      if (!handlers.includes(fn)) handlers.push(fn);
+     },
+     trigger() {
+       handlers.forEach((h) => h());

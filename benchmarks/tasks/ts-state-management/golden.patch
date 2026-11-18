@@ -1,0 +1,12 @@
+diff --git a/state.js b/state.js
+index 129ba4a..0039c26 100644
+--- a/state.js
++++ b/state.js
+@@ -1,6 +1,4 @@
+-// state.js: state management with a merge bug.
+ function updateState(state, patch) {
+-  // BUG: wholesale replacement discards existing fields.
+-  return patch;
++  return Object.assign({}, state, patch);
+ }
+ module.exports = { updateState };

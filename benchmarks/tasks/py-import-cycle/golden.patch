@@ -1,0 +1,11 @@
+diff --git a/config.py b/config.py
+index fd1af75..57170a1 100644
+--- a/config.py
++++ b/config.py
+@@ -1,5 +1 @@
+-"""Config module (baseline imports from app, causing a cycle)."""
+-
+-from app import APP_NAME
+-
+-SETTINGS = {"name": APP_NAME}
++SETTINGS = {"name": "default"}

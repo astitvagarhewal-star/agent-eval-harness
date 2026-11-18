@@ -1,0 +1,10 @@
+id: ts-event-listener
+prompt: |
+  Fix setup in events.js so registering the same listener twice only invokes
+  it once when triggered (deduplicate listeners).
+test_cmd: node tests/test_hidden.js
+hidden_tests:
+  - tests/test_hidden.js
+timeout_sec: 60
+difficulty: easy
+language: typescript

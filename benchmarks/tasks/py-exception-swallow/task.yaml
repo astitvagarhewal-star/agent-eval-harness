@@ -1,0 +1,10 @@
+id: py-exception-swallow
+prompt: |
+  Fix load_number in loader.py so it does not swallow conversion errors; it
+  must let ValueError propagate for non-numeric input.
+test_cmd: PYTHONPATH=. python tests/test_hidden.py
+hidden_tests:
+  - tests/test_hidden.py
+timeout_sec: 60
+difficulty: easy
+language: python

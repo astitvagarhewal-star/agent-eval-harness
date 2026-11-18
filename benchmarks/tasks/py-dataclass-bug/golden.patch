@@ -1,0 +1,15 @@
+diff --git a/model.py b/model.py
+index 64c819a..9d59a11 100644
+--- a/model.py
++++ b/model.py
+@@ -1,8 +1,6 @@
+-"""A dataclass with a shared mutable default (dataclass bug)."""
+-
+-from dataclasses import dataclass
++from dataclasses import dataclass, field
+ 
+ 
+ @dataclass
+ class Task:
+-    tags: list = []
++    tags: list = field(default_factory=list)

@@ -1,0 +1,10 @@
+id: go-rate-limiter
+prompt: |
+  Fix Limiter.Allow in limiter.go so the bucket allows exactly 3 requests
+  (use <= 0, not < 0).
+test_cmd: go test ./...
+hidden_tests:
+  - hidden_test.go
+timeout_sec: 60
+difficulty: easy
+language: go

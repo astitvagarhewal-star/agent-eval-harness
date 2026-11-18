@@ -1,0 +1,13 @@
+diff --git a/middleware.go b/middleware.go
+index 3e10f51..df10fd5 100644
+--- a/middleware.go
++++ b/middleware.go
+@@ -5,7 +5,6 @@ import "net/http"
+ // Middleware wraps an http.Handler.
+ func Middleware(next http.Handler) http.Handler {
+ 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+-		// BUG: the wrapped handler is never invoked.
+-		w.WriteHeader(http.StatusOK)
++		next.ServeHTTP(w, r)
+ 	})
+ }

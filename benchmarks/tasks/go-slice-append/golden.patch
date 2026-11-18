@@ -1,0 +1,12 @@
+diff --git a/slice.go b/slice.go
+index 9c5c05c..6437736 100644
+--- a/slice.go
++++ b/slice.go
+@@ -1,6 +1,5 @@
+ package main
+ 
+ func CopyInts(nums []int) []int {
+-	// BUG: aliases the input slice instead of copying it.
+-	return nums
++	return append([]int{}, nums...)
+ }

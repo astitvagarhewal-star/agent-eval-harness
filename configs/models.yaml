@@ -1,0 +1,86 @@
+# Model roster for the Sandboxed Coding-Agent Eval Harness.
+# Benchmarks run these models head-to-head; pricing is per 1M tokens (USD).
+models:
+  - id: goedel/deepseek/deepseek-v4.1-flash
+    label: "Gödel DeepSeek V4.1 Flash"
+    role: Fast reasoning baseline
+    endpoint: https://api.openai.com/v1
+    api_key_env: OPENAI_API_KEY
+    pricing:
+      input_per_1m: 0.50
+      output_per_1m: 1.50
+    rate_limit:
+      rpm: 60
+
+  - id: nvidia/nvidia/nemotron-3.5-lightning-30b-a3b
+    label: "NVIDIA Nemotron 3.5 Lightning 30B"
+    role: Low-latency MoE baseline
+    endpoint: https://integrate.api.nvidia.com/v1
+    api_key_env: NVIDIA_API_KEY
+    pricing:
+      input_per_1m: 0.30
+      output_per_1m: 0.60
+    rate_limit:
+      rpm: 60
+
+  - id: nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b
+    label: "NVIDIA Nemotron 3.5 Super VL 120B"
+    role: Heavyweight open-weights
+    endpoint: https://integrate.api.nvidia.com/v1
+    api_key_env: NVIDIA_API_KEY
+    pricing:
+      input_per_1m: 1.00
+      output_per_1m: 3.00
+    rate_limit:
+      rpm: 30
+
+  - id: opencode/glm-5.3-flash-free
+    label: "OpenCode GLM 5.3 Flash Free"
+    role: Free-tier contender
+    endpoint: https://api.opencode.ai/v1
+    api_key_env: OPENCODE_API_KEY
+    pricing:
+      input_per_1m: 0.00
+      output_per_1m: 0.00
+    rate_limit:
+      rpm: 60
+
+  - id: opencode/minimax-m3.1-flash-free
+    label: "OpenCode MiniMax M3.1 Flash Free"
+    role: Free-tier contender
+    endpoint: https://api.opencode.ai/v1
+    api_key_env: OPENCODE_API_KEY
+    pricing:
+      input_per_1m: 0.00
+      output_per_1m: 0.00
+    rate_limit:
+      rpm: 60
+
+  - id: opencode/deepseek-v4.1-flash-free
+    label: "OpenCode DeepSeek V4.1 Flash Free"
+    role: Free-tier contender
+    endpoint: https://api.opencode.ai/v1
+    api_key_env: OPENCODE_API_KEY
+    pricing:
+      input_per_1m: 0.00
+      output_per_1m: 0.00
+    rate_limit:
+      rpm: 60
+
+  - id: google/gemini-3.6-flash
+    label: "Gemini 3.6 Flash"
+    role: Frontier flash baseline
+    endpoint: https://generativelanguage.googleapis.com/v1beta
+    api_key_env: GEMINI_API_KEY
+    pricing:
+      input_per_1m: 0.075
+      output_per_1m: 0.30
+    rate_limit:
+      rpm: 60
+
+# Concurrency & budget defaults for the harness runner.
+harness:
+  max_concurrent_sandboxes: 1
+  default_max_steps: 30
+  default_timeout_sec: 600
+  output_truncate_chars: 4000

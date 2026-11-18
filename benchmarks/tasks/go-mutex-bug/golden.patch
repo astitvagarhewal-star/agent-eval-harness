@@ -1,0 +1,13 @@
+diff --git a/counter.go b/counter.go
+index 151affa..058b943 100644
+--- a/counter.go
++++ b/counter.go
+@@ -9,7 +9,7 @@ type Counter struct {
+ 
+ func (c *Counter) Add(v int) {
+ 	c.mu.Lock()
+-	// BUG: Unlock is forgotten, so subsequent Add/Value calls deadlock.
++	defer c.mu.Unlock()
+ 	c.n += v
+ }
+ 

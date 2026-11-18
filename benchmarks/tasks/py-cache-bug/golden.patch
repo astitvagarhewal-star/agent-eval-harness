@@ -1,0 +1,22 @@
+diff --git a/cache.py b/cache.py
+index a9d26a5..31a9788 100644
+--- a/cache.py
++++ b/cache.py
+@@ -1,5 +1,3 @@
+-"""A cache that is not keyed by its argument (stale-cache bug)."""
+-
+ _computed = {}
+ 
+ 
+@@ -8,8 +6,6 @@ def compute(key):
+ 
+ 
+ def get_config(key):
+-    # BUG: the cache is not keyed by `key`, so every call returns the first
+-    # computed value regardless of the argument.
+-    if not _computed:
+-        _computed["value"] = compute(key)
+-    return _computed["value"]
++    if key not in _computed:
++        _computed[key] = compute(key)
++    return _computed[key]

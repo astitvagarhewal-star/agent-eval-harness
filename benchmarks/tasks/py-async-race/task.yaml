@@ -1,0 +1,11 @@
+id: py-async-race
+prompt: |
+  Fix the async race condition in counter/Counter.increment so that 100
+  concurrent increments reliably produce value 100. Make the read-modify-write
+  atomic without removing the async nature of the method.
+test_cmd: PYTHONPATH=. python tests/test_hidden.py
+hidden_tests:
+  - tests/test_hidden.py
+timeout_sec: 60
+difficulty: easy
+language: python

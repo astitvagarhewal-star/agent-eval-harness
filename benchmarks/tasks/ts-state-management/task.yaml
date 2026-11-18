@@ -1,0 +1,10 @@
+id: ts-state-management
+prompt: |
+  Fix updateState in state.js so it merges the patch into the existing state
+  instead of replacing it entirely.
+test_cmd: node tests/test_hidden.js
+hidden_tests:
+  - tests/test_hidden.js
+timeout_sec: 60
+difficulty: easy
+language: typescript

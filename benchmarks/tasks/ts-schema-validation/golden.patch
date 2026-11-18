@@ -1,0 +1,12 @@
+diff --git a/validate.js b/validate.js
+index c03c029..b3d3a4c 100644
+--- a/validate.js
++++ b/validate.js
+@@ -1,6 +1,4 @@
+-// validate.js: age validation with an off-by-one bug.
+ function isAdult(age) {
+-  // BUG: 18-year-olds are incorrectly rejected.
+-  return age > 18;
++  return age >= 18;
+ }
+ module.exports = { isAdult };

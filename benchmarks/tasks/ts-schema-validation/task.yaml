@@ -1,0 +1,9 @@
+id: ts-schema-validation
+prompt: |
+  Fix isAdult in validate.js so 18-year-olds count as adults (use >=, not >).
+test_cmd: node tests/test_hidden.js
+hidden_tests:
+  - tests/test_hidden.js
+timeout_sec: 60
+difficulty: easy
+language: typescript

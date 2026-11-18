@@ -1,0 +1,10 @@
+id: py-mutable-default
+prompt: |
+  Fix append_item in utils.py so each call with no explicit list starts from a
+  fresh empty list (avoid the shared mutable default argument).
+test_cmd: PYTHONPATH=. python tests/test_hidden.py
+hidden_tests:
+  - tests/test_hidden.py
+timeout_sec: 60
+difficulty: easy
+language: python

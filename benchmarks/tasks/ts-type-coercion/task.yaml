@@ -1,0 +1,9 @@
+id: ts-type-coercion
+prompt: |
+  Fix areEqual in coerce.js to use strict equality so "5" does not equal 5.
+test_cmd: node tests/test_hidden.js
+hidden_tests:
+  - tests/test_hidden.js
+timeout_sec: 60
+difficulty: easy
+language: typescript

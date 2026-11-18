@@ -1,0 +1,14 @@
+diff --git a/limiter.go b/limiter.go
+index b7a3384..afcbd37 100644
+--- a/limiter.go
++++ b/limiter.go
+@@ -9,8 +9,7 @@ func NewLimiter() *Limiter {
+ }
+ 
+ func (l *Limiter) Allow() bool {
+-	// BUG: off-by-one allows one request too many (4 instead of 3).
+-	if l.tokens < 0 {
++	if l.tokens <= 0 {
+ 		return false
+ 	}
+ 	l.tokens--

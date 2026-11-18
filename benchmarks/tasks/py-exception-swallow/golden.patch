@@ -1,0 +1,13 @@
+diff --git a/loader.py b/loader.py
+index 7ebcc51..88adec9 100644
+--- a/loader.py
++++ b/loader.py
+@@ -1,7 +1,2 @@
+-"""A loader that swallows conversion errors."""
+-
+ def load_number(text):
+-    try:
+-        return int(text)
+-    except Exception:
+-        return 0
++    return int(text)

@@ -1,0 +1,12 @@
+diff --git a/parseints.js b/parseints.js
+index 031152c..f0d0ed4 100644
+--- a/parseints.js
++++ b/parseints.js
+@@ -1,6 +1,4 @@
+-// parseints.js: comma-separated int parser with an empty-field bug.
+ function parseInts(input) {
+-  // BUG: empty fields become 0 instead of being skipped.
+-  return input.split(",").map(Number);
++  return input.split(",").filter((s) => s !== "").map(Number);
+ }
+ module.exports = { parseInts };

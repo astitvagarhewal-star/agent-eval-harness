@@ -1,0 +1,10 @@
+id: go-slice-append
+prompt: |
+  Fix CopyInts in slice.go so it returns an independent copy of the input
+  slice instead of aliasing it.
+test_cmd: go test ./...
+hidden_tests:
+  - hidden_test.go
+timeout_sec: 60
+difficulty: easy
+language: go

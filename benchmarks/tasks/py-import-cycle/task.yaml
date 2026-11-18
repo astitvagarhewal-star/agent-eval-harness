@@ -1,0 +1,10 @@
+id: py-import-cycle
+prompt: |
+  Break the circular import between app.py and config.py so that importing app
+  succeeds and app.APP_NAME is "myapp".
+test_cmd: PYTHONPATH=. python tests/test_hidden.py
+hidden_tests:
+  - tests/test_hidden.py
+timeout_sec: 60
+difficulty: easy
+language: python

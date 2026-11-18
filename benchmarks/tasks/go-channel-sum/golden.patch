@@ -1,0 +1,12 @@
+diff --git a/channel.go b/channel.go
+index 7f4b75b..6061423 100644
+--- a/channel.go
++++ b/channel.go
+@@ -9,6 +9,5 @@ func SumChannel(nums []int) int {
+ 		}
+ 		ch <- s
+ 	}()
+-	// BUG: never reads from the channel; the result is lost.
+-	return 0
++	return <-ch
+ }

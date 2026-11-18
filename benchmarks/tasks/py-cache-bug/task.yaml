@@ -1,0 +1,10 @@
+id: py-cache-bug
+prompt: |
+  Fix get_config in cache.py so the result cache is keyed by its argument
+  (different keys must return different results).
+test_cmd: PYTHONPATH=. python tests/test_hidden.py
+hidden_tests:
+  - tests/test_hidden.py
+timeout_sec: 60
+difficulty: easy
+language: python
